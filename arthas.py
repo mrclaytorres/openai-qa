@@ -4,7 +4,7 @@ import openai
 import creds
 import docx
 
-# your
+# your OpenAI API KEY
 openai.api_key = creds.OPENAI_API_KEY
 
 paperFilePath = "document.docx"
@@ -31,7 +31,6 @@ def askquestion():
   # Prompt is what you feed to the OpenAI to train it together with your question on the last part.
   prompt = document + '\n' + 'Q: ' + question + '\nA:'
 
-  
   response = openai.Completion.create(
     model="text-davinci-002",
     prompt=prompt,
